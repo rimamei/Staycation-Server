@@ -108,6 +108,25 @@ module.exports = {
     }
   },
 
+  editBank: async (req, res) => {
+    try {
+      const { id, nameBank, nomorRekening, name } = req.body;
+      const bank = await Bank.findOne({ _id: id });
+      bank.name = name;
+      bank.nameBank = nameBank;
+      bank.nomorRekening = nomorRekening;
+      bank.imageUrl = `images/${req.file.filename}`;
+      await bank.save();
+      req.flash("alertMessage", "Success Update Bank");
+      req.flash("alertStatus", "success");
+      res.redirect("/admin/bank");
+    } catch (error) {
+      req.flash("alertMessage", `${error.message}`);
+      req.flash("alertStatus", "danger");
+      res.redirect("/admin/bank");
+    }
+  },
+
   viewItem: (req, res) => {
     res.render("admin/item/view_item", {
       title: "Staycation | Item",

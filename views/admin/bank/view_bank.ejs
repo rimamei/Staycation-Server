@@ -64,7 +64,22 @@
   </div>
 
   <%- include('add_modal_bank.ejs') %>
+  <%- include('edit_modal_bank.ejs') %>
   <%- include('../../partials/js.ejs') %>
 </body>
 
 </html>
+
+<script>
+  $('#dataTable').on('click', '.btn-update', function () {
+    let id = $(this).data('id');
+    let nameBank = $(this).data('namebank');
+    let nomorRekening = $(this).data('nomorrekening');
+    let name = $(this).data('name');
+    $('#edit-modal-bank').modal('show');
+    $('.id').val(id);
+    $('.nameBank').val(nameBank);
+    $('.nomorRekening').val(nomorRekening);
+    $('.name').val(name);
+  })
+</script>
