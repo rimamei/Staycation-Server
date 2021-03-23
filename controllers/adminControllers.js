@@ -1,16 +1,18 @@
+const Category = require('../models/Category');
+
 module.exports = {
     viewDashboard: (req, res) => {
-        res.render('admin/dashboard/view_dashboard')
+        res.render('admin/dashboard/view_dashboard');
     },
     
     viewCategory: (req, res) => {
-        res.render('admin/category/view_category')
+        res.render('admin/category/view_category');
     },
 
-    addCategory: (req, res) => {
-        console.log(req.body);
-        const { nama } = req.body
-        console.log(nama);
+    addCategory: async (req, res) => {
+        const { name } = req.body;
+        await Category.create({ name });
+        res.redirect('/admin/category');
     },
 
     viewBank: (req, res) => {
