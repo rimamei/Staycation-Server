@@ -17,12 +17,13 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <%- include('../../partials/message.ejs') %>
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">CATEGORY</h1>
-            <!-- End Heading -->
+          <!-- End Heading -->
 
-            <%- include('table_category.ejs')%>
+          <%- include('table_category.ejs')%>
 
         </div>
         <!-- /.container-fluid -->
@@ -44,7 +45,8 @@
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -70,10 +72,10 @@
 </html>
 
 <script>
-  $('#dataTable').on('click', '.btn-update', function(){
+  $('#dataTable').on('click', '.btn-update', function () {
     let id = $(this).data('id');
     let name = $(this).data('name');
-    console.log(id+name)
+    console.log(id + name)
     $('#edit-modal-category').modal('show');
     $('.id').val(id);
     $('.name').val(name);
