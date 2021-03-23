@@ -7,6 +7,12 @@ module.exports = {
         res.render('admin/category/view_category')
     },
 
+    addCategory: (req, res) => {
+        console.log(req.body);
+        const { nama } = req.body
+        console.log(nama);
+    },
+
     viewBank: (req, res) => {
         res.render('admin/bank/view_bank')
     },
