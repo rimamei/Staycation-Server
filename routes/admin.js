@@ -29,7 +29,7 @@ router.delete('/item/:id/delete', adminController.deleteItem);
 // detail item
 router.get('/item/show-detail-item/:itemId', adminController.viewDetailItem);
 router.post('/item/add/feature', upload, adminController.addFeature);
-
+router.put('/item/update/feature', upload, adminController.editFeature);
 
 // booking
 router.get('/booking', adminController.viewBooking);
