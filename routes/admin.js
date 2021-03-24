@@ -26,6 +26,10 @@ router.get('/item/:id', adminController.showEditItem);
 router.put('/item/:id', uploadMultiple, adminController.editItem);
 router.delete('/item/:id/delete', adminController.deleteItem);
 
+// detail item
+router.get('/item/show-detail-item/:itemId', adminController.viewDetailItem);
+
+
 // booking
 router.get('/booking', adminController.viewBooking);
 
