@@ -67,15 +67,19 @@ module.exports = {
     res.redirect("/admin/signin");
   },
 
-  viewDashboard: (req, res) => {
+  viewDashboard: async (req, res) => {
     try {
+      const member = await Member.find();
+      const booking = await Booking.find();
+      const item = await Item.find();
       res.render("admin/dashboard/view_dashboard", {
+        member,
+        booking,
+        item,
         title: "Staycation | Dashboard",
         user: req.session.user,
       });
     } catch (error) {
-      req.flash("alertMessage", `${error.message}`);
-      req.flash("alertStatus", "danger");
       res.redirect("/admin/dashboard");
     }
   },
