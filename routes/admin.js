@@ -3,6 +3,10 @@ const router = require('express').Router();
 const adminController = require('../controllers/adminControllers');
 const {upload, uploadMultiple} = require('../middlewares/multer');
 
+// signin
+router.get('/signin', adminController.viewSignin);
+router.post('/signin', adminController.actionSignin);
+
 // dashboard
 router.get('/dashboard', adminController.viewDashboard);
 
