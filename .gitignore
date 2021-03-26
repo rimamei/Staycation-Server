@@ -5,3 +5,6 @@
 
 # misc
 .env
+
+# file
+seed.js
