@@ -40,7 +40,7 @@
                     <td><%= i + 1 %></td>
                     <td><%= activity[i].name %></td>
                     <td><%= activity[i].type %></td>
-                    <td><img src="http://localhost:5000/<%= activity[i].imageUrl %>" alt="activity image" width="100px" ></td>
+                    <td><img src="http://localhost:3000/<%= activity[i].imageUrl %>" alt="activity image" width="100px" ></td>
                     <td>
                       <form action="/admin/item/<%= itemId %>/activity/<%= activity[i].id %>?_method=DELETE" method="POST">
                         <a href="javascript:void()" type="button" class="btn btn-warning btn-circle btn-sm btn-update"

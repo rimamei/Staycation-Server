@@ -7,12 +7,11 @@ const session = require('express-session');
 // Package untuk update/edit data
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
-const dotenv = require('dotenv').config();
 
 // import mongoose
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect('mongodb://localhost:27017/db_staycation', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
