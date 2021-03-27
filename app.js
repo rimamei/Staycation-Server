@@ -7,6 +7,7 @@ const session = require('express-session');
 // Package untuk update/edit data
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
+var cors = require('cors')
 
 // import mongoose
 const mongoose = require("mongoose");
@@ -31,6 +32,7 @@ var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use(cors());
 app.use(methodOverride('_method'));
 app.use(session({
   secret: 'keyboard cat',
